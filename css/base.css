@@ -1,0 +1,132 @@
+/* ==========================================================================
+   BASE — Reset, Body, Typografie-Grundlagen
+   ========================================================================== */
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Root */
+html {
+  font-size: 100%;          /* 16px Basis — nie kleiner setzen */
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100dvh;
+}
+
+/* Typografie */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--c-text);
+}
+
+h1 { font-size: var(--text-2xl); font-weight: 800; letter-spacing: -0.02em; }
+h2 { font-size: var(--text-xl); }
+h3 { font-size: var(--text-lg); }
+h4 { font-size: var(--text-md); }
+
+p {
+  max-width: 70ch;
+  line-height: 1.65;
+}
+
+p + p {
+  margin-top: var(--space-4);
+}
+
+/* Links */
+a {
+  color: var(--c-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--duration-base) var(--ease-out);
+}
+
+a:hover {
+  color: var(--c-accent-dark);
+}
+
+/* Externe Links */
+a[target="_blank"],
+a[rel~="noopener"] {
+  /* Kein automatisches Icon — bewusste Entscheidung pro Element */
+}
+
+/* Bilder */
+img, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Listen (Reset für Navigation) */
+ul, ol {
+  list-style: none;
+}
+
+/* Formulare */
+button, input, textarea, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Fokus — sichtbar, kein outline:none */
+:focus-visible {
+  outline: 3px solid var(--c-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Selektion */
+::selection {
+  background-color: oklch(68% 0.14 58 / 0.25);
+  color: var(--c-text);
+}
+
+/* Utility — visuell versteckt, aber für Screenreader sichtbar */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Section-Abstände (Variation erzeugt Rhythmus) */
+.section-sm { padding-block: var(--space-12); }
+.section-md { padding-block: var(--space-16); }
+.section-lg { padding-block: var(--space-24); }
+
+/* Muted Text */
+.text-muted { color: var(--c-text-muted); }
+
+/* Lead */
+.text-lead {
+  font-size: var(--text-md);
+  line-height: 1.5;
+  color: var(--c-text-muted);
+}

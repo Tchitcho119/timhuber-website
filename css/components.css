@@ -1,0 +1,625 @@
+/* ==========================================================================
+   COMPONENTS — Button, Karte, Navigation, Footer, WhatsApp-Sticky
+   ========================================================================== */
+
+/* ------------------------------------------------------------------
+   BUTTON
+   ------------------------------------------------------------------ */
+
+/* Primary (Amber — nur WhatsApp-CTA, Von Restorff) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--c-accent);
+  color: var(--c-accent-text);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--text-base);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-sm);
+  min-height: 48px;         /* Fitts's Law */
+  min-width: 48px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background var(--duration-base) var(--ease-out);
+}
+
+.btn-primary:hover {
+  background: var(--c-accent-dark);
+  color: var(--c-accent-text);
+}
+
+.btn-primary:focus-visible {
+  outline: 3px solid var(--c-accent);
+  outline-offset: 3px;
+}
+
+/* Secondary (Outline — kein Amber) */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: transparent;
+  color: var(--c-text);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--text-base);
+  padding: calc(var(--space-3) - 2px) calc(var(--space-6) - 2px);
+  border: 2px solid var(--c-border-dark);
+  border-radius: var(--radius-sm);
+  min-height: 48px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    border-color var(--duration-base) var(--ease-out),
+    background var(--duration-base) var(--ease-out);
+}
+
+.btn-secondary:hover {
+  border-color: var(--c-text);
+  background: var(--c-surface);
+  color: var(--c-text);
+}
+
+/* ------------------------------------------------------------------
+   BADGE / STATUS
+   ------------------------------------------------------------------ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-heading);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: var(--space-1) var(--space-3);
+  border-radius: 100px;
+  line-height: 1;
+}
+
+.badge-available {
+  background: oklch(62% 0.13 145 / 0.12);
+  color: oklch(38% 0.12 145);
+}
+
+.badge-sold {
+  background: oklch(55% 0.09 265 / 0.10);
+  color: oklch(40% 0.08 265);
+}
+
+.badge-reserved {
+  background: oklch(68% 0.14 58 / 0.12);
+  color: oklch(44% 0.12 58);
+}
+
+/* ------------------------------------------------------------------
+   KARTE (Immobilien-Listing)
+   Miller's Law: max. 6 Felder sichtbar
+   ------------------------------------------------------------------ */
+
+.card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: background var(--duration-base) var(--ease-out);
+}
+
+.card:hover {
+  background: var(--c-surface-2);
+}
+
+.card-image {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--c-surface-2);
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.card:hover .card-image img {
+  transform: scale(1.03);
+}
+
+.card-body {
+  padding: var(--space-6);
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--c-text);
+  margin-bottom: var(--space-2);
+  text-decoration: none;
+}
+
+.card-title:hover {
+  color: var(--c-text);
+}
+
+.card-price {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--c-text);
+  letter-spacing: -0.02em;
+}
+
+.card-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--c-border);
+}
+
+.card-spec {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.card-spec-label {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--c-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-spec-value {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--c-text);
+}
+
+/* ------------------------------------------------------------------
+   NAVIGATION
+   Hick's Law: max. 5 Punkte
+   ------------------------------------------------------------------ */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--c-bg);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding-inline: var(--gutter);
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.nav-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.nav-links {
+  display: none;    /* Mobile: ausgeblendet */
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.nav-link {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--c-text-muted);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.nav-link:hover,
+.nav-link[aria-current="page"] {
+  color: var(--c-text);
+}
+
+.nav-link[aria-current="page"] {
+  font-weight: 700;
+}
+
+/* CTA in Nav */
+.nav-cta {
+  display: none;
+}
+
+/* Hamburger (Mobile) */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 48px;
+  height: 48px;
+  padding: var(--space-3);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  background: var(--c-text);
+  border-radius: 2px;
+  transition: transform var(--duration-base) var(--ease-out),
+              opacity var(--duration-base) var(--ease-out);
+}
+
+/* Mobile Overlay */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 64px 0 0 0;
+  background: var(--c-bg);
+  z-index: 49;
+  padding: var(--space-8) var(--gutter);
+  flex-direction: column;
+  gap: var(--space-6);
+  border-top: 1px solid var(--c-border);
+}
+
+.nav-overlay.is-open {
+  display: flex;
+}
+
+.nav-overlay .nav-link {
+  font-size: var(--text-md);
+  font-weight: 600;
+  color: var(--c-text);
+  padding-block: var(--space-2);
+  border-bottom: 1px solid var(--c-border);
+}
+
+/* Desktop: Links + CTA zeigen, Toggle verstecken */
+@media (min-width: 768px) {
+  .nav-links { display: flex; }
+  .nav-cta   { display: flex; }
+  .nav-toggle { display: none; }
+}
+
+/* ------------------------------------------------------------------
+   FOOTER
+   ------------------------------------------------------------------ */
+
+.footer {
+  background: var(--c-text);
+  color: var(--c-text-light);
+  padding-block: var(--space-16) var(--space-8);
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.footer-grid {
+  display: grid;
+  gap: var(--space-12);
+  grid-template-columns: 1fr;
+}
+
+.footer-brand img {
+  height: 36px;
+  width: auto;
+  margin-bottom: var(--space-4);
+  opacity: 0.9;
+  filter: brightness(10);  /* Anthrazit-Logo auf dunklem BG aufhellen */
+}
+
+.footer-tagline {
+  font-size: var(--text-sm);
+  color: oklch(70% 0.008 265);
+  max-width: 30ch;
+  line-height: 1.5;
+}
+
+.footer-heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: oklch(70% 0.008 265);
+  margin-bottom: var(--space-4);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-link {
+  font-size: var(--text-sm);
+  color: oklch(80% 0.006 265);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.footer-link:hover {
+  color: var(--c-text-light);
+}
+
+.footer-contact p {
+  font-size: var(--text-sm);
+  color: oklch(80% 0.006 265);
+  line-height: 1.7;
+  max-width: none;
+}
+
+.footer-contact a {
+  color: oklch(80% 0.006 265);
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  color: var(--c-text-light);
+}
+
+.footer-bottom {
+  margin-top: var(--space-12);
+  padding-top: var(--space-6);
+  border-top: 1px solid oklch(25% 0.010 265);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-copy {
+  font-size: var(--text-xs);
+  color: oklch(55% 0.008 265);
+}
+
+.footer-legal {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.footer-legal a {
+  font-size: var(--text-xs);
+  color: oklch(55% 0.008 265);
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  color: oklch(70% 0.008 265);
+}
+
+/* Footer Grid: 2 Spalten ab Tablet, 4 ab Desktop */
+@media (min-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 1024px) {
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr 1.5fr; }
+  .footer-inner { padding-inline: var(--gutter-lg); }
+}
+
+/* ------------------------------------------------------------------
+   WHATSAPP STICKY (Mobile)
+   Fitts's Law: 56x56px, immer erreichbar
+   Von Restorff: einziges Amber-Element auf der Seite
+   ------------------------------------------------------------------ */
+
+.whatsapp-sticky {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  z-index: 100;
+  width: 56px;
+  height: 56px;
+  background: var(--c-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 2px 8px oklch(0% 0 0 / 0.15);
+  transition:
+    background var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out);
+}
+
+.whatsapp-sticky:hover {
+  background: var(--c-accent-dark);
+  transform: scale(1.06);
+}
+
+.whatsapp-sticky:focus-visible {
+  outline: 3px solid var(--c-accent);
+  outline-offset: 3px;
+}
+
+.whatsapp-sticky svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--c-accent-text);
+  flex-shrink: 0;
+}
+
+/* Desktop: Sticky ausblenden (Nav-CTA übernimmt) */
+@media (min-width: 768px) {
+  .whatsapp-sticky { display: none; }
+}
+
+/* ------------------------------------------------------------------
+   VERTRAUENS-BADGES (Startseite)
+   ------------------------------------------------------------------ */
+
+.trust-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.trust-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--c-surface-2);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.trust-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--c-text-muted);
+  fill: none;
+}
+
+.trust-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--c-text);
+  line-height: 1.3;
+}
+
+.trust-sublabel {
+  font-size: var(--text-xs);
+  color: var(--c-text-muted);
+}
+
+/* ------------------------------------------------------------------
+   LEISTUNGS-GRID (Startseite)
+   Anti-Ban: kein identisches Icon+Heading+Text×3-Grid
+   ------------------------------------------------------------------ */
+
+.service-grid {
+  display: grid;
+  gap: var(--space-2);
+  grid-template-columns: 1fr;
+}
+
+.service-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-6);
+  padding: var(--space-6);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  background: var(--c-bg);
+  transition: background var(--duration-base) var(--ease-out);
+}
+
+.service-item:hover {
+  background: var(--c-surface);
+}
+
+.service-number {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--c-border-dark);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 2ch;
+  letter-spacing: -0.03em;
+}
+
+.service-content {}
+
+.service-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--c-text);
+  margin-bottom: var(--space-2);
+}
+
+.service-desc {
+  font-size: var(--text-sm);
+  color: var(--c-text-muted);
+  line-height: 1.55;
+  max-width: none;
+}
+
+@media (min-width: 768px) {
+  .service-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ------------------------------------------------------------------
+   VORHER/NACHHER (Handwerk)
+   ------------------------------------------------------------------ */
+
+.before-after {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr 1fr;
+}
+
+.before-after-item {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--c-surface-2);
+}
+
+.before-after-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.before-after-label {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  font-family: var(--font-heading);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: var(--space-1) var(--space-3);
+  background: oklch(14% 0.016 265 / 0.75);
+  color: var(--c-text-light);
+  border-radius: 100px;
+  backdrop-filter: blur(4px);
+}

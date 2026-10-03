@@ -1,0 +1,102 @@
+/* ==========================================================================
+   TOKENS — Tim Huber Immobilien & Handwerk
+   Quelle: 03-Design/DESIGN.md
+   Änderungen hier wirken auf alle Seiten.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+
+  /* ------------------------------------------------------------------
+     Farben (OKLCH — kein #000, kein #fff)
+     ------------------------------------------------------------------ */
+
+  /* Hintergründe */
+  --c-bg:        oklch(98.5% 0.006 75);   /* Warme Cream */
+  --c-surface:   oklch(96%   0.008 75);   /* Karten */
+  --c-surface-2: oklch(93%   0.010 75);   /* Hover-Flächen */
+
+  /* Text */
+  --c-text:       oklch(14%  0.016 265);  /* Tiefes Anthrazit */
+  --c-text-muted: oklch(44%  0.012 265);  /* Sekundärtext */
+  --c-text-light: oklch(99%  0.003 75);   /* Text auf dunklem BG */
+
+  /* Akzent — Warm Amber (einzige Signalfarbe) */
+  --c-accent:      oklch(68% 0.14 58);    /* WhatsApp-Button, primärer CTA */
+  --c-accent-dark: oklch(60% 0.13 58);    /* Hover */
+  --c-accent-text: oklch(14% 0.016 265);  /* Text auf Amber */
+
+  /* Struktur */
+  --c-border:      oklch(88% 0.009 75);
+  --c-border-dark: oklch(78% 0.010 75);
+
+  /* Semantisch */
+  --c-success: oklch(62% 0.13 145);  /* Verfügbar */
+  --c-sold:    oklch(55% 0.09 265);  /* Vermietet/Verkauft */
+  --c-error:   oklch(55% 0.18 25);   /* Fehler */
+
+  /* ------------------------------------------------------------------
+     Typografie
+     ------------------------------------------------------------------ */
+
+  --font-heading: 'Archivo', system-ui, sans-serif;
+  --font-body:    'Space Grotesk', system-ui, sans-serif;
+
+  /* Skala: 1.25 Major Third */
+  --text-xs:   0.64rem;    /*  ~10px — Labels, Badges */
+  --text-sm:   0.8rem;     /*  ~13px — Meta, Captions */
+  --text-base: 1rem;       /*   16px — Fließtext */
+  --text-md:   1.25rem;    /*   20px — Lead-Text */
+  --text-lg:   1.563rem;   /*   25px — H3 */
+  --text-xl:   1.953rem;   /*   31px — H2 */
+  --text-2xl:  2.441rem;   /*   39px — H1 Seiten */
+  --text-3xl:  3.052rem;   /*   49px — Hero Desktop */
+  --text-4xl:  3.815rem;   /*   61px — Hero max */
+
+  /* ------------------------------------------------------------------
+     Spacing (4px-Basis)
+     ------------------------------------------------------------------ */
+
+  --space-1:  0.25rem;   /*   4px */
+  --space-2:  0.5rem;    /*   8px */
+  --space-3:  0.75rem;   /*  12px */
+  --space-4:  1rem;      /*  16px */
+  --space-6:  1.5rem;    /*  24px */
+  --space-8:  2rem;      /*  32px */
+  --space-12: 3rem;      /*  48px */
+  --space-16: 4rem;      /*  64px */
+  --space-24: 6rem;      /*  96px */
+  --space-32: 8rem;      /* 128px */
+
+  /* ------------------------------------------------------------------
+     Layout
+     ------------------------------------------------------------------ */
+
+  --max-width:        1280px;
+  --max-width-text:   720px;    /* Fließtext-Container */
+  --max-width-narrow: 560px;    /* Formulare */
+  --gutter:           var(--space-6);   /* Mobile */
+  --gutter-md:        var(--space-8);   /* Tablet */
+  --gutter-lg:        var(--space-16);  /* Desktop */
+
+  /* ------------------------------------------------------------------
+     Radien & Schatten
+     ------------------------------------------------------------------ */
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+
+  --shadow-sm: 0 2px 8px oklch(0% 0 0 / 0.10);
+  --shadow-md: 0 4px 16px oklch(0% 0 0 / 0.12);
+
+  /* ------------------------------------------------------------------
+     Motion
+     ------------------------------------------------------------------ */
+
+  --duration-fast:   120ms;
+  --duration-base:   180ms;
+  --duration-slow:   300ms;
+  --ease-out:        cubic-bezier(0.16, 1, 0.3, 1);
+}
