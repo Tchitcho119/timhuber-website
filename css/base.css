@@ -116,6 +116,32 @@ button {
   border-width: 0;
 }
 
+/* Skip-to-content (a11y) — pure CSS, kein JS */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: var(--space-3) var(--space-4);
+  background: var(--c-accent);
+  color: var(--c-accent-text);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  border-radius: 0 0 var(--radius-sm) 0;
+  z-index: 999;
+  text-decoration: none;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.skip-link:focus {
+  clip: auto;
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
+
 /* Section-Abstände (Variation erzeugt Rhythmus) */
 .section-sm { padding-block: var(--space-12); }
 .section-md { padding-block: var(--space-16); }

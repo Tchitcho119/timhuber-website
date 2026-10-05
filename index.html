@@ -6,7 +6,7 @@
 
   <!-- Security -->
   <meta http-equiv="Content-Security-Policy"
-        content="default-src 'none'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'unsafe-inline'; form-action 'none';">
+        content="default-src 'none'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self'; script-src 'self'; form-action 'none'; frame-ancestors 'none';">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <!-- SEO -->
@@ -247,7 +247,6 @@
         "description": "Immobilienmakler und Schreinermeister in Neuweiler, Saarland. Ankauf, Verkauf, Handwerk und Werkzeugverleih.",
         "url": "https://tchitcho119.github.io/timhuber-website/",
         "telephone": "+4968979666075",
-        "email": "info@huber-immohand.de",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Sternplatz 4",
@@ -280,8 +279,8 @@
 
 <body>
 
-  <!-- Skip link (a11y) -->
-  <a class="sr-only" href="#main-content" style="position:absolute;top:0;left:0;padding:var(--space-3) var(--space-4);background:var(--c-accent);color:var(--c-accent-text);font-family:var(--font-heading);font-weight:700;border-radius:0 0 var(--radius-sm) 0;z-index:999;text-decoration:none;" onfocus="this.style.clip='auto';this.style.width='auto';this.style.height='auto';" onblur="this.removeAttribute('style');">Zum Inhalt springen</a>
+  <!-- Skip link (a11y) — reines CSS, kein JS -->
+  <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
 
   <!-- ================================================================
        NAVIGATION
@@ -294,7 +293,7 @@
       </a>
 
       <ul class="nav-links" role="list">
-        <li><a href="immobilien.html"    class="nav-link" aria-current="page">Immobilien</a></li>
+        <li><a href="immobilien.html"    class="nav-link">Immobilien</a></li>
         <li><a href="handwerk.html"      class="nav-link">Handwerk</a></li>
         <li><a href="werkzeugverleih.html" class="nav-link">Werkzeugverleih</a></li>
         <li><a href="bauplanung.html"    class="nav-link">Bauplanung</a></li>
@@ -316,8 +315,7 @@
       <button class="nav-toggle"
               aria-label="Menü öffnen"
               aria-expanded="false"
-              aria-controls="nav-mobile"
-              onclick="var o=this.getAttribute('aria-expanded')==='true';this.setAttribute('aria-expanded',String(!o));this.setAttribute('aria-label',o?'Menü öffnen':'Menü schließen');document.getElementById('nav-mobile').classList.toggle('is-open',!o);">
+              aria-controls="nav-mobile">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -660,5 +658,6 @@
     </svg>
   </a>
 
+  <script src="js/nav.js" defer></script>
 </body>
 </html>
