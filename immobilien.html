@@ -26,20 +26,53 @@
   <link rel="stylesheet" href="css/layout.css?v=2">
 
   <style>
-    .listing-placeholder {
-      background: var(--c-surface-2);
-      border-radius: var(--radius-md);
-      aspect-ratio: 16 / 10;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .ref-mosaic {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+      margin-bottom: var(--space-3);
     }
-    .listing-placeholder svg {
-      width: 40px;
-      height: 40px;
-      stroke: var(--c-border-dark);
-      fill: none;
-      opacity: 0.5;
+    @media (min-width: 768px) {
+      .ref-mosaic {
+        grid-template-columns: 3fr 2fr;
+        align-items: start;
+      }
+    }
+    .ref-item {
+      margin: 0;
+    }
+    .ref-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--radius-md);
+      object-fit: cover;
+      aspect-ratio: 4 / 3;
+    }
+    .ref-item--featured img {
+      aspect-ratio: 4 / 3;
+    }
+    .ref-stack {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+    .ref-stack .ref-item img {
+      aspect-ratio: 16 / 10;
+    }
+    .ref-caption {
+      padding-top: var(--space-3);
+    }
+    .ref-caption-title {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--c-text);
+      margin: 0 0 var(--space-1) 0;
+    }
+    .ref-caption-loc {
+      font-size: var(--text-xs);
+      color: var(--c-text-muted);
+      margin: 0;
     }
     .ref-note {
       font-size: var(--text-xs);
@@ -258,94 +291,46 @@
         <h2 id="listings-heading">Abgeschlossene Objekte.</h2>
         <p class="text-lead" style="margin-top:var(--space-3);margin-bottom:var(--space-12);">Aktuelle Angebote entstehen laufend. Schreiben Sie Tim direkt für Verfügbarkeiten.</p>
 
-        <div class="listing-grid">
+        <div class="ref-mosaic">
 
-          <!-- Listing 1 -->
-          <article class="card">
-            <div class="card-image listing-placeholder">
-              <svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>
-            </div>
-            <div class="card-body">
-              <div class="card-meta">
+          <!-- Referenz 1: Mehrfamilienhaus (featured, groß links) -->
+          <figure class="ref-item ref-item--featured">
+            <img src="img/immobilien/referenzen/ref3.webp"
+                 alt="Saniertes Mehrfamilienhaus mit Holz-Grau-Fassade"
+                 width="1500" height="1501" loading="lazy">
+            <figcaption class="ref-caption">
+              <span class="badge badge-sold">Vermietet</span>
+              <p class="ref-caption-title">Mehrfamilienhaus</p>
+              <p class="ref-caption-loc">Saarbrücken</p>
+            </figcaption>
+          </figure>
+
+          <!-- Referenzen 2 + 3: gestapelt rechts -->
+          <div class="ref-stack">
+            <figure class="ref-item">
+              <img src="img/immobilien/referenzen/ref4.webp"
+                   alt="Weißes Einfamilienhaus mit Holzakzenten am Garagentor"
+                   width="1500" height="1501" loading="lazy">
+              <figcaption class="ref-caption">
                 <span class="badge badge-sold">Verkauft</span>
-              </div>
-              <h3 class="card-title">Einfamilienhaus Sulzbach</h3>
-              <p style="font-size:var(--text-sm);color:var(--c-text-muted);margin-top:var(--space-2);line-height:1.5;">Freistehendes Einfamilienhaus, vollständig renoviert. Vermittlung inkl. Wertermittlung und Verhandlungsführung.</p>
-              <div class="card-specs">
-                <div class="card-spec">
-                  <span class="card-spec-label">Typ</span>
-                  <span class="card-spec-value">Einfamilienhaus</span>
-                </div>
-                <div class="card-spec">
-                  <span class="card-spec-label">Lage</span>
-                  <span class="card-spec-value">Sulzbach (Saar)</span>
-                </div>
-                <div class="card-spec">
-                  <span class="card-spec-label">Status</span>
-                  <span class="card-spec-value">Verkauft</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Listing 2 -->
-          <article class="card">
-            <div class="card-image listing-placeholder">
-              <svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>
-            </div>
-            <div class="card-body">
-              <div class="card-meta">
+                <p class="ref-caption-title">Einfamilienhaus</p>
+                <p class="ref-caption-loc">Sulzbach (Saar)</p>
+              </figcaption>
+            </figure>
+            <figure class="ref-item">
+              <img src="img/immobilien/referenzen/ref5.webp"
+                   alt="Traditionelle Doppelhaushälfte Nummer 28"
+                   width="1500" height="1514" loading="lazy">
+              <figcaption class="ref-caption">
                 <span class="badge badge-sold">Vermietet</span>
-              </div>
-              <h3 class="card-title">Eigentumswohnung Neunkirchen</h3>
-              <p style="font-size:var(--text-sm);color:var(--c-text-muted);margin-top:var(--space-2);line-height:1.5;">3-Zimmer-Wohnung, sanierte Küche und Bad. Mieter innerhalb von zwei Wochen gefunden.</p>
-              <div class="card-specs">
-                <div class="card-spec">
-                  <span class="card-spec-label">Typ</span>
-                  <span class="card-spec-value">Eigentumswohnung</span>
-                </div>
-                <div class="card-spec">
-                  <span class="card-spec-label">Zimmer</span>
-                  <span class="card-spec-value">3</span>
-                </div>
-                <div class="card-spec">
-                  <span class="card-spec-label">Lage</span>
-                  <span class="card-spec-value">Neunkirchen</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Listing 3 -->
-          <article class="card">
-            <div class="card-image listing-placeholder">
-              <svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>
-            </div>
-            <div class="card-body">
-              <div class="card-meta">
-                <span class="badge badge-sold">Verkauft</span>
-              </div>
-              <h3 class="card-title">Mehrfamilienhaus Saarbrücken</h3>
-              <p style="font-size:var(--text-sm);color:var(--c-text-muted);margin-top:var(--space-2);line-height:1.5;">Kleines Mehrfamilienhaus als Kapitalanlage. Ankauf, Bewertung und Weiterveräußerung aus einer Hand.</p>
-              <div class="card-specs">
-                <div class="card-spec">
-                  <span class="card-spec-label">Typ</span>
-                  <span class="card-spec-value">Mehrfamilienhaus</span>
-                </div>
-                <div class="card-spec">
-                  <span class="card-spec-label">Lage</span>
-                  <span class="card-spec-value">Saarbrücken</span>
-                </div>
-                <div class="card-spec">
-                  <span class="card-spec-label">Status</span>
-                  <span class="card-spec-value">Verkauft</span>
-                </div>
-              </div>
-            </div>
-          </article>
+                <p class="ref-caption-title">Doppelhaushälfte</p>
+                <p class="ref-caption-loc">Neunkirchen</p>
+              </figcaption>
+            </figure>
+          </div>
 
         </div>
-        <p class="ref-note">Fotos und Details aus Datenschutzgründen nicht veröffentlicht. Aktuelle Objekte auf Anfrage.</p>
+        <p class="ref-note">Aktuelle Objekte entstehen laufend. Schreiben Sie Tim direkt für neue Verfügbarkeiten.</p>
       </div>
     </section>
 
