@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self'; script-src 'self'; form-action 'none'; frame-ancestors 'none';">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <title>Handwerk &amp; Renovierung im Saarland – Tim Huber</title>
+  <meta name="description" content="Schreinermeister Tim Huber aus Neuweiler: Umbauen, Renovieren und Sanieren im Saarland. Handwerksqualität direkt vom Meister – jetzt per WhatsApp anfragen.">
+  <link rel="canonical" href="https://tchitcho119.github.io/timhuber-website/handwerk.html">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Handwerk &amp; Renovierung im Saarland – Tim Huber">
+  <meta property="og:description" content="Umbauen, renovieren und sanieren im Saarland – Schreinermeister Tim Huber aus Neuweiler.">
+  <meta property="og:url"         content="https://tchitcho119.github.io/timhuber-website/handwerk.html">
+  <meta property="og:image"       content="https://tchitcho119.github.io/timhuber-website/img/th-logo.webp">
+  <meta property="og:locale"      content="de_DE">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  <style>
+    .leistung-section {
+      padding-block: var(--space-16);
+      border-bottom: 1px solid var(--c-border);
+    }
+    .leistung-section:last-of-type {
+      border-bottom: none;
+    }
+    .leistung-inner {
+      display: grid;
+      gap: var(--space-12);
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .leistung-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-16);
+      }
+      .leistung-inner.reverse {
+        direction: rtl;
+      }
+      .leistung-inner.reverse > * {
+        direction: ltr;
+      }
+    }
+    .leistung-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-2);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .leistung-photos img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+    .leistung-photos img:first-child {
+      grid-column: 1 / -1;
+      aspect-ratio: 16 / 9;
+    }
+    .leistung-number {
+      font-family: var(--font-heading);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-text-muted);
+      margin-bottom: var(--space-4);
+    }
+    .before-after-wrap {
+      background: var(--c-surface);
+      border-top: 1px solid var(--c-border);
+      border-bottom: 1px solid var(--c-border);
+    }
+    .before-after-grid {
+      display: grid;
+      gap: var(--space-4);
+    }
+    @media (min-width: 640px) {
+      .before-after-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .before-after-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .before-after-item img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+    .before-after-label {
+      position: absolute;
+      top: var(--space-3);
+      left: var(--space-3);
+      font-family: var(--font-heading);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--c-text-light);
+      background: oklch(15% 0.008 265 / 0.75);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-sm);
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+        "@id": "https://tchitcho119.github.io/timhuber-website/#business",
+        "name": "Tim Huber Immobilien & Handwerk",
+        "url": "https://tchitcho119.github.io/timhuber-website/",
+        "telephone": "+4968979666075",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Sternplatz 4",
+          "addressLocality": "Neuweiler",
+          "postalCode": "66280",
+          "addressCountry": "DE"
+        },
+        "areaServed": [
+          { "@type": "State", "name": "Saarland" }
+        ],
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Schreinermeister (IHK)"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://tchitcho119.github.io/timhuber-website/" },
+          { "@type": "ListItem", "position": 2, "name": "Handwerk", "item": "https://tchitcho119.github.io/timhuber-website/handwerk.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+
+  <nav class="nav" role="navigation" aria-label="Hauptnavigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Tim Huber Immobilien & Handwerk – Startseite">
+        <img src="img/th-logo.webp" alt="TH" width="40" height="40">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="immobilien.html"      class="nav-link">Immobilien</a></li>
+        <li><a href="handwerk.html"        class="nav-link" aria-current="page">Handwerk</a></li>
+        <li><a href="werkzeugverleih.html" class="nav-link">Werkzeugverleih</a></li>
+        <li><a href="bauplanung.html"      class="nav-link">Bauplanung</a></li>
+        <li><a href="kontakt.html"         class="nav-link">Kontakt</a></li>
+      </ul>
+      <a href="https://wa.me/4968979666075?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Handwerk%20und%20Renovierung."
+         class="btn-primary nav-cta" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp-Nachricht senden">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-mobile">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="nav-overlay" id="nav-mobile" aria-label="Mobile Navigation">
+      <a href="immobilien.html"      class="nav-link">Immobilien</a>
+      <a href="handwerk.html"        class="nav-link" aria-current="page">Handwerk</a>
+      <a href="werkzeugverleih.html" class="nav-link">Werkzeugverleih</a>
+      <a href="bauplanung.html"      class="nav-link">Bauplanung</a>
+      <a href="kontakt.html"         class="nav-link">Kontakt</a>
+      <a href="https://wa.me/4968979666075?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Handwerk%20und%20Renovierung."
+         class="btn-primary" target="_blank" rel="noopener noreferrer" style="margin-top:var(--space-2);align-self:flex-start;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Jetzt anfragen
+      </a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <header class="page-header">
+      <div class="container">
+        <p class="text-muted" style="font-size:var(--text-sm);font-family:var(--font-heading);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:var(--space-3);">Handwerk</p>
+        <h1>Umbauen, renovieren, sanieren im Saarland.</h1>
+        <p class="text-lead" style="margin-top:var(--space-3);">Schreinermeisterqualität für Ihr Zuhause. Kein Subunternehmer, kein Umweg — Tim Huber macht es selbst.</p>
+      </div>
+    </header>
+
+    <!-- Leistungsbereich 1: Umbauen -->
+    <section class="leistung-section" aria-labelledby="umbauen-heading">
+      <div class="container">
+        <div class="leistung-inner">
+          <div>
+            <p class="leistung-number">01 — Umbauen</p>
+            <h2 id="umbauen-heading">Strukturveränderungen, die Bestand haben.</h2>
+            <p class="text-lead" style="margin-top:var(--space-4);margin-bottom:var(--space-6);">Wände versetzen, Öffnungen schaffen, Grundrisse neu denken. Tim beurteilt als Meister die Statik und koordiniert zuverlässig alle Gewerke.</p>
+            <ul style="display:flex;flex-direction:column;gap:var(--space-3);list-style:none;padding:0;margin:0;">
+              <li style="display:flex;align-items:flex-start;gap:var(--space-3);font-size:var(--text-sm);color:var(--c-text-muted);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="oklch(52% 0.13 145)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="flex-shrink:0;margin-top:1px;"><path d="M4.5 12.75l6 6 9-13.5"/></svg>
+                Wände einreißen und neu setzen
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:var(--space-3);font-size:var(--text-sm);color:var(--c-text-muted);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="oklch(52% 0.13 145)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="flex-shrink:0;margin-top:1px;"><path d="M4.5 12.75l6 6 9-13.5"/></svg>
+                Türen und Fensteröffnungen anpassen
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:var(--space-3);font-size:var(--text-sm);color:var(--c-text-muted);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="oklch(52% 0.13 145)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="flex-shrink:0;margin-top:1px;"><path d="M4.5 12.75l6 6 9-13.5"/></svg>
+                Trockenbauwände und Verkleidungen
+              </li>
+            </ul>
+          </div>
+          <div class="leistung-photos">
+            <img src="img/handwerk/processed_0325_0032.webp"
+                 alt="Umbauarbeiten – Wand wird geöffnet" width="800" height="450" loading="lazy">
+            <img src="img/handwerk/processed_0325_0033.webp"
+                 alt="Strukturelle Umbauarbeit im Innenbereich" width="400" height="300" loading="lazy">
+            <img src="img/handwerk/processed_0325_0041.webp"
+                 alt="Handwerk-Detail beim Umbau" width="400" height="300" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leistungsbereich 2: Renovieren -->
+    <section class="leistung-section" style="background:var(--c-surface);" aria-labelledby="renovieren-heading">
+      <div class="container">
+        <div class="leistung-inner reverse">
+          <div>
+            <p class="leistung-number">02 — Renovieren</p>
+            <h2 id="renovieren-heading">Neues Leben für ältere Objekte.</h2>
+            <p class="text-lead" style="margin-top:var(--space-4);margin-bottom:var(--space-6);">Böden, Wände, Decken, Einbauten: Tim renoviert mit Sorgfalt und dem Blick des Schreinermeisters für Materialien und Qualität.</p>
+            <ul style="display:flex;flex-direction:column;gap:var(--space-3);list-style:none;padding:0;margin:0;">
+              <li style="display:flex;align-items:flex-start;gap:var(--space-3);font-size:var(--text-sm);color:var(--c-text-muted);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="oklch(52% 0.13 145)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="flex-shrink:0;margin-top:1px;"><path d="M4.5 12.75l6 6 9-13.5"/></svg>
+                Bodenbeläge, Parkett, Fliesen
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:var(--space-3);font-size:var(--text-sm);color:var(--c-text-muted);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="oklch(52% 0.13 145)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="flex-shrink:0;margin-top:1px;"><path d="M4.5 12.75l6 6 9-13.5"/></svg>
+                Einbauschränke und Maßmöbel
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:var(--space-3);font-size:var(--text-sm);color:var(--c-text-muted);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="oklch(52% 0.13 145)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="flex-shrink:0;margin-top:1px;"><path d="M4.5 12.75l6 6 9-13.5"/></svg>
+                Wand- und Deckenarbeiten
+              </li>
+            </ul>
+          </div>
+          <div class="leistung-photos">
+            <img src="img/handwerk/processed_0325_0037.webp"
+                 alt="Renovierungsarbeit – Bodenbelag verlegen" width="800" height="450" loading="lazy">
+            <img src="img/handwerk/processed_0325_0038.webp"
+                 alt="Renovierter Innenraum nach Fertigstellung" width="400" height="300" loading="lazy">
+            <img src="img/handwerk/processed_0325_0040.webp"
+                 alt="Handwerksdetail bei der Renovierung" width="400" height="300" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leistungsbereich 3: Sanieren -->
+    <section class="leistung-section" aria-labelledby="sanieren-heading">
+      <div class="container">
+        <div class="leistung-inner">
+          <div>
+            <p class="leistung-number">03 — Sanieren</p>
+            <h2 id="sanieren-heading">Substanzerhalt und Wertsteigerung.</h2>
+            <p class="text-lead" style="margin-top:var(--space-4);margin-bottom:var(--space-6);">Feuchtigkeitsschäden beheben, Dämmung einbauen, Altbausubstanz erhalten: Sanierung mit Fachkenntnis und ohne Schönfärberei.</p>
+            <ul style="display:flex;flex-direction:column;gap:var(--space-3);list-style:none;padding:0;margin:0;">
+              <li style="display:flex;align-items:flex-start;gap:var(--space-3);font-size:var(--text-sm);color:var(--c-text-muted);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="oklch(52% 0.13 145)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="flex-shrink:0;margin-top:1px;"><path d="M4.5 12.75l6 6 9-13.5"/></svg>
+                Feuchtigkeits- und Schimmelschäden
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:var(--space-3);font-size:var(--text-sm);color:var(--c-text-muted);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="oklch(52% 0.13 145)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="flex-shrink:0;margin-top:1px;"><path d="M4.5 12.75l6 6 9-13.5"/></svg>
+                Dämmmaßnahmen und Energieeffizienz
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:var(--space-3);font-size:var(--text-sm);color:var(--c-text-muted);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="oklch(52% 0.13 145)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="flex-shrink:0;margin-top:1px;"><path d="M4.5 12.75l6 6 9-13.5"/></svg>
+                Altbausubstanz erhalten und aufwerten
+              </li>
+            </ul>
+          </div>
+          <div class="leistung-photos">
+            <img src="img/handwerk/processed_0525_0001.webp"
+                 alt="Sanierungsarbeiten im Innenbereich" width="800" height="450" loading="lazy">
+            <img src="img/handwerk/processed_0525_0002.webp"
+                 alt="Finish-Arbeiten bei der Sanierung" width="400" height="300" loading="lazy">
+            <img src="img/handwerk/processed_0525_0005.webp"
+                 alt="Sanierungsdetail nach Fertigstellung" width="400" height="300" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vorher-Nachher -->
+    <section class="before-after-wrap section-md" aria-labelledby="vorher-nachher-heading">
+      <div class="container">
+        <p style="font-family:var(--font-heading);font-size:var(--text-xs);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--c-text-muted);margin-bottom:var(--space-4);">Ergebnis</p>
+        <h2 id="vorher-nachher-heading" style="margin-bottom:var(--space-10);">Vorher und nachher.</h2>
+        <div class="before-after-grid">
+          <div class="before-after-item">
+            <img src="img/handwerk/processed_0325_0034.webp"
+                 alt="Raum vor der Renovierung – Rohzustand" width="600" height="450" loading="lazy">
+            <span class="before-after-label">Vorher</span>
+          </div>
+          <div class="before-after-item">
+            <img src="img/handwerk/processed_20240708_152141.webp"
+                 alt="Fertiggestellter Raum nach der Renovierung durch Tim Huber" width="600" height="450" loading="lazy">
+            <span class="before-after-label">Nachher</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" aria-labelledby="cta-heading">
+      <div class="container">
+        <h2 id="cta-heading">Projekt besprechen?</h2>
+        <p>Schreiben Sie Tim direkt. Er schaut es sich an und gibt Ihnen eine ehrliche Einschätzung.</p>
+        <div class="hero-actions" style="justify-content:center;margin-top:var(--space-8);">
+          <a href="https://wa.me/4968979666075?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Handwerk%20und%20Renovierung."
+             class="btn-primary" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Jetzt anfragen
+          </a>
+          <a href="tel:+4968979666075" class="btn-secondary" style="color:var(--c-text-light);border-color:oklch(30% 0.010 265);">06897 9666075</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="img/th-logo.webp" alt="Tim Huber Immobilien & Handwerk" width="40" height="40">
+          <p class="footer-tagline">Immobilienmakler und Handwerksmeister aus Neuweiler, Saarland.</p>
+        </div>
+        <nav aria-label="Leistungen">
+          <p class="footer-heading">Leistungen</p>
+          <ul class="footer-links" role="list">
+            <li><a href="immobilien.html"      class="footer-link">Immobilien</a></li>
+            <li><a href="handwerk.html"         class="footer-link">Handwerk</a></li>
+            <li><a href="werkzeugverleih.html"  class="footer-link">Werkzeugverleih</a></li>
+            <li><a href="bauplanung.html"        class="footer-link">Bauplanung</a></li>
+            <li><a href="kontakt.html"           class="footer-link">Kontakt</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Rechtliches">
+          <p class="footer-heading">Rechtliches</p>
+          <ul class="footer-links" role="list">
+            <li><a href="impressum.html"   class="footer-link">Impressum</a></li>
+            <li><a href="datenschutz.html" class="footer-link">Datenschutz</a></li>
+          </ul>
+        </nav>
+        <address class="footer-contact" style="font-style:normal;">
+          <p class="footer-heading">Kontakt</p>
+          <p>Tim Huber Immobilien &amp; Handwerk<br>Sternplatz 4<br>66280 Neuweiler<br><br><a href="tel:+4968979666075">06897 9666075</a></p>
+        </address>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Tim Huber Immobilien &amp; Handwerk. Alle Rechte vorbehalten.</p>
+        <nav class="footer-legal" aria-label="Rechtliche Links">
+          <a href="impressum.html"   class="footer-link">Impressum</a>
+          <a href="datenschutz.html" class="footer-link">Datenschutz</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/4968979666075?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Handwerk%20und%20Renovierung."
+     class="whatsapp-sticky" target="_blank" rel="noopener noreferrer"
+     aria-label="WhatsApp-Nachricht an Tim Huber senden">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="js/nav.js" defer></script>
+</body>
+</html>
