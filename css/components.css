@@ -526,42 +526,44 @@
 }
 
 /* ------------------------------------------------------------------
-   LEISTUNGS-GRID (Startseite)
-   Anti-Ban: kein identisches Icon+Heading+Text×3-Grid
+   LEISTUNGS-LISTE (Startseite)
+   Horizontale Liste statt identisches Karten-Grid.
    ------------------------------------------------------------------ */
 
 .service-grid {
-  display: grid;
-  gap: var(--space-2);
-  grid-template-columns: 1fr;
+  border-top: 1px solid var(--c-border);
 }
 
 .service-item {
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 2.8ch 1fr 20px;
+  align-items: center;
   gap: var(--space-6);
-  padding: var(--space-6);
-  border: 1px solid var(--c-border);
-  border-radius: var(--radius-md);
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--c-border);
   text-decoration: none;
-  background: var(--c-bg);
-  transition: background var(--duration-base) var(--ease-out);
+  background: transparent;
+  transition: opacity var(--duration-base) var(--ease-out);
 }
 
 .service-item:hover {
-  background: var(--c-surface);
+  opacity: 0.65;
+  background: transparent;
 }
 
 .service-number {
   font-family: var(--font-heading);
-  font-size: var(--text-2xl);
+  font-size: var(--text-xl);
   font-weight: 800;
-  color: oklch(40% 0.008 265);
   line-height: 1;
   flex-shrink: 0;
-  width: 2ch;
   letter-spacing: -0.03em;
 }
+
+.service-grid .service-item:nth-child(1) .service-number { color: oklch(20% 0.012 265); }
+.service-grid .service-item:nth-child(2) .service-number { color: oklch(32% 0.010 265); }
+.service-grid .service-item:nth-child(3) .service-number { color: oklch(44% 0.008 265); }
+.service-grid .service-item:nth-child(4) .service-number { color: oklch(56% 0.007 265); }
 
 .service-content {}
 
@@ -577,11 +579,30 @@
   font-size: var(--text-sm);
   color: var(--c-text-muted);
   line-height: 1.55;
-  max-width: none;
+}
+
+.service-arrow {
+  width: 20px;
+  height: 20px;
+  stroke: var(--c-border-dark);
+  fill: none;
+  flex-shrink: 0;
+  transition: transform var(--duration-base) var(--ease-out),
+              stroke var(--duration-base) var(--ease-out);
+}
+
+.service-item:hover .service-arrow {
+  transform: translateX(3px);
+  stroke: var(--c-text-muted);
 }
 
 @media (min-width: 768px) {
-  .service-grid { grid-template-columns: 1fr 1fr; }
+  .service-item {
+    grid-template-columns: 2.8ch 1fr 20px;
+    gap: var(--space-8);
+    padding: var(--space-8) 0;
+  }
+  .service-desc { max-width: 58ch; }
 }
 
 /* ------------------------------------------------------------------
