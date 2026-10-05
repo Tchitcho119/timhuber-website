@@ -403,7 +403,7 @@
 
 .footer-copy {
   font-size: var(--text-xs);
-  color: oklch(55% 0.008 265);
+  color: oklch(65% 0.008 265);
 }
 
 .footer-legal {
@@ -413,7 +413,7 @@
 
 .footer-legal a {
   font-size: var(--text-xs);
-  color: oklch(55% 0.008 265);
+  color: oklch(65% 0.008 265);
   text-decoration: none;
 }
 
