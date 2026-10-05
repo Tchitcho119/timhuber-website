@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /fonts/
+
+Sitemap: https://tchitcho119.github.io/timhuber-website/sitemap.xml
