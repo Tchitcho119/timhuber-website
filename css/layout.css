@@ -160,23 +160,30 @@
    ------------------------------------------------------------------ */
 
 .page-header {
-  padding-block: var(--space-12) var(--space-8);
-  border-bottom: 1px solid var(--c-border);
+  background: var(--c-text);
+  padding-block: var(--space-12) var(--space-10);
+}
+
+.page-header p.text-muted,
+.page-header .section-label {
+  color: oklch(60% 0.01 265);
 }
 
 .page-header h1 {
   font-size: var(--text-2xl);
   font-weight: 800;
   letter-spacing: -0.02em;
+  color: oklch(97% 0.006 75);
 }
 
 .page-header .text-lead {
   margin-top: var(--space-3);
+  color: oklch(72% 0.01 265);
 }
 
 @media (min-width: 768px) {
-  .page-header { padding-block: var(--space-16) var(--space-12); }
-  .page-header h1 { font-size: var(--text-3xl); }
+  .page-header { padding-block: var(--space-20) var(--space-16); }
+  .page-header h1 { font-size: clamp(2rem, 4vw, 2.75rem); }
 }
 
 /* ------------------------------------------------------------------

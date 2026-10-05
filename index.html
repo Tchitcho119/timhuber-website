@@ -109,27 +109,13 @@
       color: var(--c-text-muted);
       margin-top: var(--space-4);
     }
-    .qual-list {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-3);
+    .ueber-credentials {
       margin-top: var(--space-6);
-    }
-    .qual-item {
-      display: flex;
-      align-items: flex-start;
-      gap: var(--space-3);
+      padding-top: var(--space-5);
+      border-top: 1px solid var(--c-border);
       font-size: var(--text-sm);
-      color: var(--c-text);
-      line-height: 1.4;
-    }
-    .qual-item svg {
-      width: 18px;
-      height: 18px;
-      stroke: oklch(52% 0.13 145);
-      fill: none;
-      flex-shrink: 0;
-      margin-top: 1px;
+      color: var(--c-text-muted);
+      line-height: 1.6;
     }
     .ueber-photo {
       aspect-ratio: 3 / 4;
@@ -474,32 +460,9 @@
             <p>
               Aufgewachsen und ansässig in Neuweiler. Vertraut mit dem Saarland, dem Markt und den Menschen hier.
             </p>
-            <ul class="qual-list" aria-label="Qualifikationen von Tim Huber">
-              <li class="qual-item">
-                <svg viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true" focusable="false">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
-                </svg>
-                Schreinermeister (IHK)
-              </li>
-              <li class="qual-item">
-                <svg viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true" focusable="false">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
-                </svg>
-                Immobilienmakler nach §34c GewO
-              </li>
-              <li class="qual-item">
-                <svg viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true" focusable="false">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
-                </svg>
-                Ansässig in Neuweiler, Saarland
-              </li>
-              <li class="qual-item">
-                <svg viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true" focusable="false">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
-                </svg>
-                Tätig in Sulzbach, Neunkirchen und Saarbrücken
-              </li>
-            </ul>
+            <p class="ueber-credentials">
+              Schreinermeister (IHK) · Immobilienmakler nach §34c GewO · Neuweiler, Saarland
+            </p>
           </div>
 
           <div class="ueber-photo">
